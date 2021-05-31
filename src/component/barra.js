@@ -1,10 +1,9 @@
-import logo from './logogm.jpg';
-import './App.css';
+// import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Navbar, Nav, Form,FormControl,Button } from 'react-bootstrap';
 
-function App() {
+function Bar() {
   return ( 
   <Navbar bg="primary" variant="dark">
     <Navbar.Brand href="#home">
@@ -23,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Bar;
