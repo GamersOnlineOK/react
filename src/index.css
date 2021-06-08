@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.CartWidget{
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: aliceblue;
+}
+.Widget-total{
+  font-size: 1.5em;
+}
+
