@@ -18,10 +18,10 @@ ReactDOM.render(
 ReactDOM.render(
   <React.StrictMode>
     
-    <Producto title="Producto 1" description="Descripcion de Producto uno"/>
-    <Producto title="Producto 2" description="Descripcion de Producto dos"/>
-    <Producto title="Producto 3" description="Descripcion de Producto tres"/>
-    <Producto title="Producto 4" description="Descripcion de Producto cuatro"/>
+    <Producto title="Producto 1" description="Descripcion de Producto uno" stock="100"/>
+    <Producto title="Producto 2" description="Descripcion de Producto dos" stock="0"/>
+    <Producto title="Producto 3" description="Descripcion de Producto tres" stock="100"/>
+    <Producto title="Producto 4" description="Descripcion de Producto cuatro" stock="0"/>
   </React.StrictMode>,
   document.getElementById('Products')
 )
