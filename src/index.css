@@ -24,4 +24,12 @@ code {
 .Widget-total{
   font-size: 1.5em;
 }
-
+.card-img{
+  padding: 5px;
+  width: auto;
+  min-height: 20%;
+  max-height: 150px;
+}
+.card-cont{
+  min-height: 100%;
+}

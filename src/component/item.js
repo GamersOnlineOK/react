@@ -4,8 +4,9 @@ import React from 'react';
 import $ from 'jquery';
 
 
-function Producto(props) {
+function Item(props) {
     const cart=[""];
+    
     const stock = props.stock;
     function restar(event) {
         if (clicks > 1) {
@@ -28,15 +29,16 @@ function Producto(props) {
 
     }
     const [clicks, setClicks] = React.useState(1);
-    if (stock > 0) {
-        return (
 
-            <Col className="mt-1" xs={12} md={3}>
-                <Card >
-                    <Card.Img variant="top" src={logo} />
+    return (
+        <Col className="mt-1" xs={12} md={4} >
+                <Card>
+                    <Card.Img variant="top" className="card-img p-3" src={props.img} />
                     <Card.Body>
-
-                        <Card.Title>{props.title}</Card.Title>
+                        <div className="card.title">
+                            <Card.Title >{props.title}</Card.Title>
+                        </div>
+                        
                         <Card.Text>
                             {props.description}
                             <div className="text-success">Stock disponible {props.stock}</div>
@@ -51,39 +53,8 @@ function Producto(props) {
                         <Button id={props.id} className="mt-3 w-100" variant="primary" onClick={sendCart}>Comprar</Button>
                     </Card.Body>
                 </Card>
-            </Col>
-
-        );
-    } else {
-        return (
-
-            <Col className="mt-1" xs={12} md={3}>
-                <Card >
-                    <Card.Img variant="top" src={logo} />
-                    <Card.Body>
-                        <Card.Title>{props.title}</Card.Title>
-                        <Card.Text>
-                            {props.description}
-                            <div className="text-danger" >Stock disponible {props.stock}</div>
-                        </Card.Text>
-
-
-                        <div className="row d-flex justify-content-center align-item-center">
-                            <button className="col-2 m-1 btn btn-secondary rounded" >-</button>
-                            <span className="col-6 m-1 border border-secondary rounded text-center align-item-center">0</span>
-                            <button className="col-2 m-1 btn btn-secondary rounded" >+</button>
-                        </div>
-
-                        <Button className="mt-3 w-100" variant="secondary">Sin Stock</Button>
-                    </Card.Body>
-                </Card>
-            </Col>
-
-        );
-    }
-
-
-
+                </Col>
+            )
 }
 
-export default Producto;
+export default Item;
