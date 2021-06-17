@@ -4,24 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ItemListContainer from './component/itemListContainer'
+import AppRouter from './router/AppRouter';
 
 
 ReactDOM.render(
   <React.StrictMode>
     
-    <App/>
+    <AppRouter/>
         
   </React.StrictMode>,
   document.getElementById('root')
 );
-ReactDOM.render(
-  <React.StrictMode>
-    <ItemListContainer/>
-  </React.StrictMode>,
-  document.getElementById('Products')
-)
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <ItemListContainer/>
+//   </React.StrictMode>,
+//   document.getElementById('Products')
+// )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
