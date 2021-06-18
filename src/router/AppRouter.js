@@ -5,15 +5,17 @@ import Menu from '../component/menu';
 import ItemListContainer from '../component/itemListContainer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import UserName from '../component/UserName';
+import itemDetailContainer from '../component/itemDetailContainer';
 
 function AppRouter(props) {
     return (
         <Router>
             <Menu/>
             <Switch>
-                <Route exact path="/" component={home}/>
+                <Route exact path="/" component={ItemListContainer}/>
                 <Route path="/about" component={about}/>
-                <Route path="/products" component={ItemListContainer}/>
+                <Route path="/products" component={home}/>
+                <Route exact path="/productos/detail/:UserName" component={itemDetailContainer}/>
                 <Route exact path="/productos/:UserName" component={UserName}/>
                 
             </Switch>

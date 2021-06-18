@@ -50,8 +50,11 @@ function Item(props) {
                             <span className="col-6 m-1 border border-secondary rounded text-center align-item-center">{clicks}</span>
                             <button className="col-2 m-1 btn btn-success rounded" onClick={aumentar} >+</button>
                         </div>
+                        <Link to={`/productos/detail/${props.id}`}>
+                            <Button id={props.id} className="mt-3 w-100" variant="primary">Ver</Button>
+                        </Link>
                         <Link to={`/productos/${props.id}`}>
-                            <Button id={props.id} className="mt-3 w-100" variant="primary" onClick={sendCart}>{props.btnText}</Button>
+                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={sendCart}>{props.btnText}</Button>
                         </Link>
                         
                         </div>
