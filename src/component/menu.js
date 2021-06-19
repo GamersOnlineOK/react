@@ -7,17 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 function Menu() {
-  var cl=0;
-  var cartStorage=JSON.parse(localStorage.getItem("cart"));
   
-  for( let obj of cartStorage){
-      for(let objeto of obj){
-         console.log("este es el cart"+objeto.clicks); 
-         cl=objeto.clicks;  
-         
-      }
-    
-  }
 
   return (
     
