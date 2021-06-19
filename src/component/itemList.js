@@ -22,7 +22,7 @@ function ItemList(props) {
             clearTimeout(timeOut);
           };
         }, [props.onSelect]);
-        if (stock > 0) {
+        
             return (
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {data !== null ? (
@@ -38,33 +38,7 @@ function ItemList(props) {
                 </div>
 
             );
-        } else {
-            return (
-
-                <Col className="mt-1" xs={12} md={3}>
-                    <Card >
-                        <Card.Img variant="top" src={logo} />
-                        <Card.Body>
-                            <Card.Title>{props.title}</Card.Title>
-                            <Card.Text>
-                                {props.description}
-                                <div className="text-danger" >Stock disponible {props.stock}</div>
-                            </Card.Text>
-
-
-                            <div className="row d-flex justify-content-center align-item-center">
-                                <button className="col-2 m-1 btn btn-secondary rounded" >-</button>
-                                <span className="col-6 m-1 border border-secondary rounded text-center align-item-center">0</span>
-                                <button className="col-2 m-1 btn btn-secondary rounded" >+</button>
-                            </div>
-
-                            <Button className="mt-3 w-100" variant="secondary">Sin Stock</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-            );
-        }
+        
 
     
 }

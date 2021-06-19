@@ -14,7 +14,7 @@ function ItemListContainer() {
 
                 </div>
                 <div className=" col-xs-12 col-md-8 ">
-                    <ItemList title="algo" description="algo mas raro" stock="100" />
+                    <ItemList />
                 </div>
                 <div className="col-xs-12 col-md-2">
 
