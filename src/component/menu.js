@@ -13,7 +13,7 @@ function Menu(props) {
   const [data, setData] = useState(null);
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      fetch("https://api.mercadolibre.com/sites/MLA/search?nickname=DEPOHOME")
+      fetch(`https://api.mercadolibre.com/sites/MLA/search?nickname=${props.nickName}`)
         .then((res) => res.json())
         .then((res) => {
           setData(res.results);
@@ -51,13 +51,14 @@ function Menu(props) {
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
-                <ul className=" d-flex dropdown-menu flex-column" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu " aria-labelledby="navbarDropdown">
+                
                   {
                     newArray.map((newArray, index) => {
                       return <ProductCategory key={index} category={newArray.category_id} />
                     })
                   }
-
+                  
                 </ul>
               </NavLink>
             </ul>

@@ -6,7 +6,8 @@ import Item from './item';
 import { Spinner } from 'react-bootstrap';
 import ItemList from './itemList';
 
-function ItemListContainer() {
+
+function ItemListCategory() {
     return (
         <div>
             <div>
@@ -16,10 +17,10 @@ function ItemListContainer() {
             <div className="container-fluid">
                 <div className="row justify-content-center mt-5">
                     <div className="col-xs-12 col-md-1">
-
+                        
                     </div>
                     <div className=" col-xs-12 col-md-10 ">
-                        <ItemList />
+                        <ItemList nickName="PARATUCASASHOP" />
                     </div>
                     <div className="col-xs-12 col-md-1">
 
@@ -29,6 +30,8 @@ function ItemListContainer() {
             </div>
 
         </div>
-    )
+    );
 }
-export default ItemListContainer;
+
+export default ItemListCategory;
+
