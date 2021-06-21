@@ -5,11 +5,11 @@ import { Spinner } from 'react-bootstrap';
 import ItemDetail from './itemDetail';
 
 function ItemDetailContainer(props) {
-    const { UserName } = useParams();
+    const { productDetail } = useParams();
     const [data, setData] = useState(null);
     useEffect(() => {
         const timeOut = setTimeout(() => {
-            fetch(`https://api.mercadolibre.com/items/${UserName}`)
+            fetch(`https://api.mercadolibre.com/items/${productDetail}`)
                 .then((res) => res.json())
                 .then((res) => {
                     setData(res);

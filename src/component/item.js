@@ -3,28 +3,18 @@ import { Card, Col, Button } from 'react-bootstrap';
 import React from 'react';
 import $ from 'jquery';
 import { Link } from "react-router-dom";
+import useAddStock from "./js/main"
+
 
  
 
 function Item(props) {
-    
+    const stock = props.stock;
+    const{clicks, restar, aumentar}=useAddStock(stock);
    
     const carts = [];
-    const stock = props.stock;
-    const [clicks, setClicks] = React.useState(1);
-    function restar(event) {
-        if (clicks > 1) {
-            setClicks(clicks - 1);
-        }
-    };
-
-
-    function aumentar(event) {
-        if (clicks < stock) {
-            setClicks(clicks + 1);
-        }
-
-    };
+    
+    
     function sendCart() {
         $("#messege").empty();
         $("#messege").append(`<h6 class="p-3">${clicks} x ${props.title} agregado al Carrito</h6>`).fadeIn(500).delay(800).fadeOut(800);
@@ -38,7 +28,7 @@ function Item(props) {
     return (
 
 
-        <Col className="mt-1 d-flex align-item-strech " xs={12} md={3} >
+        <Col className="mt-1 d-flex align-item-strech " xs={12} md={6}  xl={3} >
             <Card className="m-1" >
                 <Card.Img variant="top" className="card-img p-1" src={props.img} />
                 <Card.Body className="d-flex flex-column justify-content-between">
@@ -46,10 +36,10 @@ function Item(props) {
                         <Card.Title >{props.title}</Card.Title>
                     </div>
                     <div>
-                        <Card.Text>
+                        <div>
                             <h4 className="text-success border-bottom border-primary text-center">$ {props.price}</h4>
                             <div className="text-success">Stock disponible {props.stock}</div>
-                        </Card.Text>
+                        </div>
 
                         <div className="row d-flex justify-content-center align-item-center">
                             <button className="col-2 m-1 btn btn-danger rounded" onClick={restar}>-</button>

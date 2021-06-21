@@ -15,7 +15,7 @@ function AppRouter(props) {
                 <Route exact path="/" component={ItemListContainer}/>
                 <Route path="/about" component={about}/>
                 <Route path="/products" component={home}/>
-                <Route exact path="/productos/detail/:UserName" component={itemDetailContainer}/>
+                <Route exact path="/productos/detail/:productDetail" component={itemDetailContainer}/>
                 <Route exact path="/productos/:UserName" component={UserName}/>
                 
             </Switch>

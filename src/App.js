@@ -8,8 +8,7 @@ import Banner from "./component/Banner"
 function App() {
   return ( 
     <div>
-      <Menu/>
-      <Banner/>
+      <h4></h4>
     </div>
     
   );

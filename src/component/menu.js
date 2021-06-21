@@ -1,34 +1,68 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import CartWidget from "./CartWidget.js";
 import logo from '../logoGm.png';
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from 'react-router-dom';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import Popper from 'popper.js';
+import ProductCategory from './ProductCategory.js';
+import { Button, Spinner } from 'react-bootstrap';
+import FilterCategory from './js/filterCategory.js';
 
-function Menu() {
-  
+function Menu(props) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      fetch("https://api.mercadolibre.com/sites/MLA/search?nickname=DEPOHOME")
+        .then((res) => res.json())
+        .then((res) => {
+          setData(res.results);
+          console.log(res.results);
+        });
+    }, 1500);
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [props.onSelect]);
 
+
+
+
+  const { newArray } = FilterCategory(data);
+  console.log(newArray);
   return (
-    
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-white">
+
+    <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#"><img height="auto" width="120px" src={logo} /></a>
+        <NavLink activeClassName="navbar-brand" exact to="/">
+
+          <img height="auto" width="120px" src={logo} />
+        </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <Nav.Link>
-              <NavLink activeClassName="text-dark" exact to="/">Home</NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink activeClassName="text-dark" to="/about">Nosotros</NavLink>
-            </Nav.Link>
-            
+          <div>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <NavLink activeClassName="text-dark" className="nav-link" exact to="/">Home</NavLink>
+              <NavLink activeClassName="text-dark" className="nav-link" to="/about">Nosotros</NavLink>
+              <NavLink className="nav-item dropdown" to="/about">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul className=" d-flex dropdown-menu flex-column" aria-labelledby="navbarDropdown">
+                  {
+                    newArray.map((newArray, index) => {
+                      return <ProductCategory key={index} category={newArray.category_id} />
+                    })
+                  }
 
-          </ul>
+                </ul>
+              </NavLink>
+            </ul>
+          </div>
+
           <CartWidget />
           <form className="d-flex">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
