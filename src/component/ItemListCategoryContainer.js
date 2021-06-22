@@ -23,8 +23,10 @@ function ItemListCategoryContainer(props) {
     return (
         <div>
             <h3>Categorias ID: {UserCategory }</h3>
+            <div className="container">
+                <ItemListCategory category={UserCategory}/>
+            </div>
             
-            <ItemListCategory category={UserCategory}/>
         </div>
     );
 }

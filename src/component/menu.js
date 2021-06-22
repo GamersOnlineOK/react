@@ -49,7 +49,7 @@ function Menu(props) {
               <NavLink activeClassName="text-dark" className="nav-link" to="/about">Nosotros</NavLink>
               <NavLink className="nav-item dropdown" to="/about">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Categorias
                 </a>
                 <ul className="dropdown-menu " aria-labelledby="navbarDropdown">
                 

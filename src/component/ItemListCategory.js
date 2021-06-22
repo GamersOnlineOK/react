@@ -28,7 +28,7 @@ function ItemList(props) {
    
     return (
         <div className="row row-cols-1 row-cols-md-3 g-4">
-            {data !== null ? (
+            {data !== null  ? (
                 data.map((data, index) => {
                     if ((data.category_id) == (props.category)) {
                         
