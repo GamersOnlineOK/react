@@ -16,13 +16,13 @@ function ProductCategory(props) {
         }, 1500);
         return () => {
             clearTimeout(timeOut);
-          };
-        }, [props.onSelect]);
-        return (
-            <li className="nav-item" >
+        };
+    }, [props.onSelect]);
+    return (
+        <li className="nav-item" >
 
             <NavLink className="nav-link" id={props.category} to={`/productos/categoria/${props.category}`}>{data}</NavLink>
-            </li>
+        </li>
     );
 }
 

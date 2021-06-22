@@ -12,8 +12,8 @@ function AppRouter() {
     return (
         <Router>
             <Menu nickName="PARATUCASASHOP"/>
-            <Switch>
-                <Route exact path="/" component={ItemListContainer}/>
+            <Switch  >
+                <Route exact path="/" component={ItemListContainer}/>               
                 <Route path="/about" component={about}/>
                 <Route path="/products" component={home}/>
                 <Route exact path="/productos/detail/:productDetail" component={itemDetailContainer}/>

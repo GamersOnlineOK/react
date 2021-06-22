@@ -1,8 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ItemListCategory from './itemListContainer';
-
+import ItemListCategory from './ItemListCategory';
 
 function ItemListCategoryContainer(props) {
   
@@ -21,11 +20,11 @@ function ItemListCategoryContainer(props) {
             clearTimeout(timeOut);
         };
     }, [props.onSelect]);
-    console.log(data);
     return (
         <div>
-            <h3>Categorias</h3>
-            <ItemListCategory/>
+            <h3>Categorias ID: {UserCategory }</h3>
+            
+            <ItemListCategory category={UserCategory}/>
         </div>
     );
 }
