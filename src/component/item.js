@@ -18,9 +18,12 @@ function Item(props) {
     
     const obj={
         "id":props.id,
+        "img":props.img,
+        "price":props.price,
+        "title":props.title,
         "cantidad":clicks
     }
-
+    
     return (
 
 

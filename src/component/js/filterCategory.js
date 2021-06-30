@@ -6,7 +6,7 @@ const FilterCategory= data =>{
         data.forEach(obj => {
             if (!newArray.some(o => o.category_id === obj.category_id)) {
               newArray.push({ ...obj })
-              console.log(newArray);
+              
             }
        
           });

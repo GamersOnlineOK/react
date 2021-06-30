@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMainConsume } from '../provider/MainProvider';
 import { Card, Col, Button, Spinner } from 'react-bootstrap';
+import {NavLink } from 'react-router-dom';
 import CartItem from './CartItem';
 
 function Cart(props) {
@@ -11,12 +12,14 @@ function Cart(props) {
     return (
         <div className="container mt-5">
             <div>
-                <button className="btn btn-success m-2">seguir comprando</button>
+                <NavLink className="btn btn-success m-2" to="/">Seguir Comprando</NavLink>
+               
             </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Accion</th>
@@ -25,8 +28,8 @@ function Cart(props) {
                 <tbody>
                     {carts !== null ? (
                 carts.map((data, index) => {
-
-                    return <CartItem key={data.id} id={data.id} cantidad={data.cantidad} />
+                   
+                    return <CartItem key={data.id} id={data.id} img={data.img} title={data.title} cantidad={data.cantidad} />
 
                 })
             ) : (
