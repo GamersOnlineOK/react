@@ -47,6 +47,7 @@ function Menu(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <NavLink activeClassName="text-dark" className="nav-link" exact to="/">Home</NavLink>
               <NavLink activeClassName="text-dark" className="nav-link" to="/about">Nosotros</NavLink>
+              <NavLink activeClassName="text-dark" className="nav-link" to="/carrito">Carrito</NavLink>
               <NavLink className="nav-item dropdown" to="/about">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categorias

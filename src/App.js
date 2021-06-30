@@ -4,12 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Menu from "./component/menu";
 import Banner from "./component/Banner"
+import AppRouter from './router/AppRouter';
 
 function App() {
   return ( 
-    <div>
-      <h4></h4>
-    </div>
+    <AppRouter/>
     
   );
 }

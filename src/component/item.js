@@ -3,26 +3,22 @@ import { Card, Col, Button } from 'react-bootstrap';
 import React from 'react';
 import $ from 'jquery';
 import { Link } from "react-router-dom";
-import useAddStock from "./js/main"
-
+import useAddStock from "./js/main";
+import {useMainConsume} from "../provider/MainProvider"
 
  
 
 function Item(props) {
+    const {sendCart}=useMainConsume();
     const stock = props.stock;
     const{clicks, restar, aumentar}=useAddStock(stock);
    
     const carts = [];
     
     
-    function sendCart() {
-        $("#messege").empty();
-        $("#messege").append(`<h6 class="p-3">${clicks} x ${props.title} agregado al Carrito</h6>`).fadeIn(500).delay(800).fadeOut(800);
-        let aCart=[{"id":props.id,"clicks":clicks}]
-        carts.push(aCart);
-        console.log(carts);
-        localStorage.setItem("cart", JSON.stringify(carts));
-
+    const obj={
+        "id":props.id,
+        "cantidad":clicks
     }
 
     return (
@@ -50,7 +46,7 @@ function Item(props) {
                             <Button id={props.id} className="mt-3 w-100" variant="primary">Ver</Button>
                         </Link>
                         <Link to={`/productos/${props.id}`}>
-                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={sendCart}>{props.btnText}</Button>
+                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={()=>{sendCart(obj)}}>{props.btnText}</Button>
                         </Link>
 
                     </div>
