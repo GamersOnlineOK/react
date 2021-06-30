@@ -45,7 +45,7 @@ function Item(props) {
                         <Link to={`/productos/detail/${props.id}`}>
                             <Button id={props.id} className="mt-3 w-100" variant="primary">Ver</Button>
                         </Link>
-                        <Link to={`/productos/${props.id}`}>
+                        <Link to={`/carrito`}>
                             <Button id={props.id} className="mt-3 w-100" variant="success" onClick={()=>{sendCart(obj)}}>{props.btnText}</Button>
                         </Link>
 
