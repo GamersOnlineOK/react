@@ -11,7 +11,6 @@ function ProductCategory(props) {
                 .then((res) => res.json())
                 .then((res) => {
                     setData(res.name);
-                    console.log(res.name);
                 });
         }, 1500);
         return () => {

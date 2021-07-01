@@ -1,17 +1,19 @@
 import React from 'react';
-import {NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useMainConsume } from '../provider/MainProvider';
 
 function CartItem(props) {
-    const {deleteItemCart}=useMainConsume();
+    const { deleteItemCart } = useMainConsume();
     return (
 
-        <tr className="itemDetail p-2">
+        <tr className=" p-2">
             <th scope="row">{props.id}</th>
-            <td><img src={props.img}/></td>
+            <td><img className="img-thumbnail" src={props.img} /></td>
             <td>{props.title}</td>
             <td>{props.cantidad}</td>
-            <td><NavLink to="/carrito" onClick={()=>{deleteItemCart(props.id)}} className="btn btn-danger" id={props.id}>x</NavLink></td>
+            <td>${props.price}</td>
+            <td>${props.total}</td>
+            <td><NavLink to="/carrito" onClick={() => { deleteItemCart(props.id) }} className="btn btn-danger" id={props.id}>x</NavLink></td>
         </tr>
 
 

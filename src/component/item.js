@@ -15,13 +15,14 @@ function Item(props) {
    
     const carts = [];
     
-    
+    const total=props.price*clicks;
     const obj={
         "id":props.id,
         "img":props.img,
         "price":props.price,
         "title":props.title,
-        "cantidad":clicks
+        "cantidad":clicks,
+        "total":total
     }
     
     return (
