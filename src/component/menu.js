@@ -6,11 +6,14 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Popper from 'popper.js';
 import ProductCategory from './ProductCategory.js';
-import { Button, Spinner } from 'react-bootstrap';
+import { useMainConsume } from '../provider/MainProvider.js';
 import FilterCategory from './js/filterCategory.js';
 
 function Menu(props) {
+  const {totalItem}=useMainConsume();
+    const{totalGlobal}=useMainConsume();
   const [data, setData] = useState(null);
+ 
   useEffect(() => {
     const timeOut = setTimeout(() => {
       fetch(`https://api.mercadolibre.com/sites/MLA/search?nickname=${props.nickName}`)
@@ -64,8 +67,11 @@ function Menu(props) {
               </NavLink>
             </ul>
           </div>
+          {totalGlobal !== 0 ? (<CartWidget monto={totalGlobal} cantidad={totalItem} />):(
+                        <p></p>
+                )}
 
-          <CartWidget />
+          
           <form className="d-flex">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>

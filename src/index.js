@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ItemListContainer from './component/itemListContainer'
-import AppRouter from './router/AppRouter';
-
 
 ReactDOM.render(
   <React.StrictMode>

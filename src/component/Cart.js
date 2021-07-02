@@ -8,7 +8,7 @@ function Cart(props) {
     const { carts } = useMainConsume();
     const{totalGlobal}=useMainConsume();
 
-    const [data, setData] = useState();
+    
 
     return (
         <div className="container mt-5">
@@ -29,7 +29,7 @@ function Cart(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {carts? (
+                    {carts !== null? (
                 carts.map((data, index) => {
                    
                     return <CartItem key={data.id} price={data.price} id={data.id} img={data.img} total={data.total} title={data.title} cantidad={data.cantidad} />
