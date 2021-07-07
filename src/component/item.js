@@ -28,12 +28,12 @@ function Item(props) {
     return (
 
 
-        <Col className="mt-1 d-flex align-item-strech " xs={12} md={6}  xl={3} >
-            <Card className="m-1" >
+        <Col className="mt-1 d-flex align-item-strech w-100" xs={12} md={6}  xl={3} >
+            <Card className="m-1 w-100 text-center  " >
                 <Card.Img variant="top" className="card-img p-1" src={props.img} />
                 <Card.Body className="d-flex flex-column justify-content-between">
                     <div className="card.title">
-                        <Card.Title >{props.title}</Card.Title>
+                        <p>{props.title}</p>
                     </div>
                     <div>
                         <div>

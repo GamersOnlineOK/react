@@ -27,7 +27,7 @@ export function MainProvider({ children }) {
         $("#messege").append(`<h6 class="p-3">${clicks} x  agregado al Carrito</h6>`).fadeIn(500).delay(800).fadeOut(800);
         
         Swal.fire({
-            position: 'top-end',
+            position: 'center-center',
             icon: 'success',
             title: 'Agregado al carrito ',
             showConfirmButton: false,
