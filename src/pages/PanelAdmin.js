@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import 'firebase/storage';
+import Item from '../component/item';
 import { getFirestore, storage } from '../firebase/firebase';
 
 
@@ -141,18 +142,10 @@ function PanelAdmin(props) {
             <div class="row mt-5">
                 {item.length > 0 ? (
                     item.map((data, index) => {
+                        console.log(data);
                         return (
-                            <div class="col-3">
-                                <div class="card text-center" >
-                                    <img src={data.utl} class="card-img-top h-25" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">{data.title}</h5>
-                                        <h3 class="card-text text-success">$ {data.price}</h3>
-                                        <p>Stock DIsponible: {data.stock}</p>
-                                        <a href="#" class="btn btn-primary w-100">ver</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <Item key={index} id={index} img={data.utl} title={data.title} price={data.price} stock={data.stock}/>
+                            
 
 
                         );

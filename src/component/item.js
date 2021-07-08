@@ -30,9 +30,10 @@ function Item(props) {
 
         <Col className="mt-1 d-flex align-item-strech w-100" xs={12} md={6}  xl={3} >
             <Card className="m-1 w-100 text-center  " >
-                <Card.Img variant="top" className="card-img p-1" src={props.img} />
+                <Card.Img variant="top" className="card-img  p-1" src={props.img} />
                 <Card.Body className="d-flex flex-column justify-content-between">
                     <div className="card.title">
+                        
                         <p>{props.title}</p>
                     </div>
                     <div>
@@ -50,7 +51,7 @@ function Item(props) {
                             <Button id={props.id} className="mt-3 w-100" variant="primary">Ver</Button>
                         </Link>
                         <Link to={`/carrito`}>
-                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={()=>{sendCart(obj)}}>{props.btnText}</Button>
+                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={()=>{sendCart(obj)}}>Agregar Al carrito</Button>
                         </Link>
 
                     </div>
