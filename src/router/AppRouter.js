@@ -1,6 +1,6 @@
 import React from 'react';
 import about from '../pages/about';
-import home from '../pages/home';
+import PanelAdmin from '../pages/PanelAdmin';
 import Menu from '../component/menu';
 import ItemListContainer from '../component/itemListContainer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
@@ -18,8 +18,9 @@ function AppRouter() {
             <Switch  >
                 <Route exact path="/" component={ItemListContainer}/>               
                 <Route path="/about" component={about}/>
-                <Route path="/products" component={home}/>
+                <Route path="/Panel-Admin" component={PanelAdmin}/>
                 <Route path="/Carrito" component={Cart}/>
+            
                 <Route exact path="/productos/detail/:productDetail" component={itemDetailContainer}/>
                 <Route exact path="/productos/:UserName" component={UserName}/>
                 <Route exact path="/productos/categoria/:UserCategory" component={ItemListCategoryContainer}/>

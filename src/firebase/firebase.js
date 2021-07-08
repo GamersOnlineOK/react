@@ -19,3 +19,6 @@ export const getFirebase = () => {
 export const getFirestore = () => {
   return firebase.firestore(app);
 };
+export const storage=()=>{
+  return firebase.storage(app);
+}
