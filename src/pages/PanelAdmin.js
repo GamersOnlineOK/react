@@ -90,7 +90,7 @@ function PanelAdmin(props) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-6 mt-5 p-5 shadow">
+                <div className="col-12 col-md-6 mt-5 p-5 shadow">
                     <div className="row ">
 
                         <div className="col-md-12">
