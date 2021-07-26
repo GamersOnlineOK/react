@@ -13,9 +13,8 @@ function ItemDetailContainer(props) {
                 .then((res) => res.json())
                 .then((res) => {
                     setData(res);
-                    console.log(res);
                 });
-        }, 1500);
+        }, 100);
         return () => {
             clearTimeout(timeOut);
         };
@@ -27,7 +26,7 @@ function ItemDetailContainer(props) {
         <div className="row d-flex justify-content-center">
            {data !== null ? (
                         
-                             <ItemDetail key={data.id} id={data.id} title={data.title} price={data.price} stock={data.available_quantity} img={data.pictures[0].url} btnText="Pagar" />
+                             <ItemDetail key={data.id} id={data.id} title={data.title} price={data.price} stock={data.available_quantity} img={data.pictures[0].url} attr={data.attributes} btnText="Pagar" />
            
                     ) : (
                         <h3 className="text-center mt-5">

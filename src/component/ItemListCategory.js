@@ -1,15 +1,10 @@
-import logo from "./logo192.png"
-import { Card, Col, Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import React, { useEffect, useState } from "react";
-import Item from './item'
-import useAddStock from "./js/main";
+import Item from './item';
 
 
 function ItemList(props) {
-    const cart = [""];
-    const stock = props.stock;
     const [data, setData] = useState(null);
-    const[object,setObject]=useState();
     useEffect(() => {
         const timeOut = setTimeout(() => {
             fetch(`https://api.mercadolibre.com/sites/MLA/search?nickname=PARATUCASASHOP`)
@@ -24,7 +19,6 @@ function ItemList(props) {
             clearTimeout(timeOut);
         };
     }, [props.onSelect]);
-    console.log("hola");
    
     return (
         <div className="row row-cols-1 row-cols-md-3 g-4">

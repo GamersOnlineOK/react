@@ -19,19 +19,19 @@ function UserName(props) {
         return () => {
             clearTimeout(timeOut);
         };
-    }, [props.onSelect]);
+    }, []);
     console.log(data);
 
     return (
-        <div className="container">
-        <div className="row d-flex justify-content-center">
+        <div classNameName="container">
+        <div classNameName="row d-flex justify-content-center">
            {data !== null ? (
                         
                             
                              <Item key={data.id} id={data.id} title={data.title} price={data.price} stock={data.available_quantity} img={data.thumbnail} btnText="Pagar" />
            
                     ) : (
-                        <h3 className="text-center mt-5">
+                        <h3 classNameName="text-center mt-5">
                             
                         <Spinner animation="grow" variant="success" />Cargando</h3>
                     )}

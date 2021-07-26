@@ -1,9 +1,6 @@
 
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import Item from './item';
-import { Spinner } from 'react-bootstrap';
+
 import Banner from './Banner';
 import ItemList from './itemList';
 
@@ -17,7 +14,7 @@ function ItemListCategory() {
                     <div className="col-xs-12 col-md-1">
                         
                     </div>
-                    <div className=" col-xs-12 col-md-10 ">
+                    <div className=" col-xs-12 col-md-8 ">
                         <ItemList nickName="PARATUCASASHOP" />
                     </div>
                     <div className="col-xs-12 col-md-1">

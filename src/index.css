@@ -38,3 +38,57 @@ code {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.btn-left{
+  
+  padding: 1px 10px;
+  font-size: 1.4em;
+  border: solid 0.5px rgb(201, 19, 19);;
+  border-radius: 10px 0px 0px 10px;
+  color: rgb(2, 2, 2);
+}
+.btn-left:hover{
+  border: solid 1px rgb(204, 24, 24);
+  color: white;
+  background-color: rgb(216, 24, 49);
+}
+.btn-top{
+  width: 100%;
+  padding: 5px;
+  border: solid 1px rgb(42, 134, 42);
+  border-radius: 5px 5px 0px 0px;
+  color: rgb(180, 178, 178);
+  background: rgb(42, 134, 42);
+}
+.btn-bottom{
+  width: 100%;
+  padding: 5px 15px;
+  border: solid 1px rgb(233, 21, 14);
+  border-radius: 0px 0px 5px 5px;
+  color: rgb(180, 178, 178);
+  background: rgb(235, 51, 5);
+}
+.btn-right{
+  
+  padding: 1px  10px;
+  border: solid 1px rgb(42, 134, 42);
+  border-radius: 0px 10px 10px 0px;
+  color: rgb(180, 178, 178);
+}
+h6{
+  color: rgb(44, 160, 44);
+  text-align: center;
+  font-size: 1.5em;
+}
+button:hover{
+  border: solid 1px green;
+  color: white;
+  background-color: green;
+}
+.Cardcss:hover{
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 5px 19px  rgba(1, 1, 1, 0.3);
+  border: solid 1px #b8b8b8;
+}
+.Cardcss{
+  border: solid 1px #ffffff;
+}

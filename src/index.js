@@ -12,11 +12,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <ItemListContainer/>
-//   </React.StrictMode>,
-//   document.getElementById('Products')
-// )
 
 reportWebVitals();

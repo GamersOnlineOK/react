@@ -1,7 +1,6 @@
 
 import { Card, Col, Button } from 'react-bootstrap';
 import React from 'react';
-import $ from 'jquery';
 import { Link } from "react-router-dom";
 import useAddStock from "./js/main";
 import {useMainConsume} from "../provider/MainProvider"
@@ -9,11 +8,10 @@ import {useMainConsume} from "../provider/MainProvider"
  
 
 function Item(props) {
-    const {sendCart}=useMainConsume();
     const stock = props.stock;
-    const{clicks, restar, aumentar}=useAddStock(stock);
+    const{clicks}=useAddStock(stock);
    
-    const carts = [];
+    
     
     const total=props.price*clicks;
     const obj={
@@ -27,7 +25,7 @@ function Item(props) {
     
     return (
 
-
+        
         <Col className="mt-1 d-flex align-item-strech w-100" xs={12} md={6}  xl={3} >
             <Card className="m-1 w-100 text-center  " >
                 <Card.Img variant="top" className="card-img  p-1" src={props.img} />
@@ -38,26 +36,21 @@ function Item(props) {
                     </div>
                     <div>
                         <div>
-                            <h4 className="text-success border-bottom border-primary text-center">$ {props.price}</h4>
-                            <div className="text-success">Stock disponible {props.stock}</div>
+                            <h4 className="text-success border-bottom border-top border-success text-center">$ {props.price}</h4>
+                            
                         </div>
 
-                        <div className="row d-flex justify-content-center align-item-center">
-                            <button className="col-2 m-1 btn btn-danger rounded" onClick={restar}>-</button>
-                            <span className="col-6 m-1 border border-secondary rounded text-center align-item-center">{clicks}</span>
-                            <button className="col-2 m-1 btn btn-success rounded" onClick={aumentar} >+</button>
-                        </div>
+                        
                         <Link to={`/productos/detail/${props.id}`}>
-                            <Button id={props.id} className="mt-3 w-100" variant="primary">Ver</Button>
+                            <Button id={props.id} className="mt-1 btn-left  w-100" variant="primary">Ver</Button>
                         </Link>
-                        <Link to={`/carrito`}>
-                            <Button id={props.id} className="mt-3 w-100" variant="success" onClick={()=>{sendCart(obj)}}>Agregar Al carrito</Button>
-                        </Link>
+                        
 
                     </div>
                 </Card.Body>
             </Card>
         </Col>
+        
     )
 
 }

@@ -1,6 +1,5 @@
 
-import React, { Component } from 'react';
-import { useMainConsume } from '../provider/MainProvider';
+import React from 'react';
 
 
 

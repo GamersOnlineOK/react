@@ -8,7 +8,7 @@ function CartItem(props) {
 
         <tr className=" p-2">
             <th scope="row">{props.id}</th>
-            <td><img className="img-thumbnail" src={props.img} /></td>
+            <td><img className="img-thumbnail" width="75px" src={props.img} alt="imagen de Producto" /></td>
             <td>{props.title}</td>
             <td>{props.cantidad}</td>
             <td>${props.price}</td>

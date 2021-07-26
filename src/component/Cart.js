@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useMainConsume } from '../provider/MainProvider';
-import { Card, Col, Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import {NavLink } from 'react-router-dom';
 import CartItem from './CartItem';
 
@@ -13,10 +13,12 @@ function Cart(props) {
     return (
         <div className="container mt-5">
             <div>
-                <NavLink className="btn btn-success m-2" to="/">Seguir Comprando</NavLink>
+                <h4 className="bg-danger p-2 text-light rounded">
+                  Detalle de tu Carrito  
+                </h4>
                
             </div>
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
@@ -42,7 +44,13 @@ function Cart(props) {
             )}
                 </tbody>
             </table>
-            <div className="border-top text-right me-5">TOTAL: {totalGlobal}</div>
+            <div className="border-top text-right me-5 p-2 text-light rounded bg-secondary"><h5 className="px-5">TOTAL: {totalGlobal}</h5></div>
+            <div className="text-right">
+              <NavLink className="btn btn-primary m-2" to="/">Seguir Comprando</NavLink> 
+              <NavLink className="btn btn-success m-2" to="/checkout">Finalizar Compra</NavLink>   
+            </div>
+            
+           
 
         </div>
     );

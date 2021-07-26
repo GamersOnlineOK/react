@@ -1,8 +1,8 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 const FilterCategory= data =>{
     const newArray = [];
     if (!data==false) {
-        console.log("true");
         data.forEach(obj => {
             if (!newArray.some(o => o.category_id === obj.category_id)) {
               newArray.push({ ...obj })
@@ -12,7 +12,9 @@ const FilterCategory= data =>{
           });
         
     } else {
-        console.log("false");
+      <h3 className="text-center mt-5">
+                            
+      <Spinner animation="grow" variant="success" />Cargando</h3>
         
     }
     

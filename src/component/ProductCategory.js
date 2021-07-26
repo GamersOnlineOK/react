@@ -16,7 +16,7 @@ function ProductCategory(props) {
         return () => {
             clearTimeout(timeOut);
         };
-    }, [props.onSelect]);
+    },[]);
     return (
         <li className="nav-item" >
 

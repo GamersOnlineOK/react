@@ -1,13 +1,11 @@
-import logo from "./logo192.png"
-import { Card, Col, Button,Spinner } from 'react-bootstrap';
+
+import { Spinner } from 'react-bootstrap';
 import React, { useEffect, useState } from "react";
-import $ from 'jquery';
 import Item from './item'
 
 
 function ItemList(props) {
-    const cart = [""];
-    const stock = props.stock;
+    
     const [data, setData] = useState(null);
     useEffect(() => {
         const timeOut = setTimeout(() => {
@@ -15,9 +13,9 @@ function ItemList(props) {
                 .then((res) => res.json())
                 .then((res) => {
                     setData(res.results);
-                    console.log(res.results);
+                    
                 });
-        }, 1500);
+        }, 500);
         return () => {
             clearTimeout(timeOut);
           };
