@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "engines": {
-    "node": "6.11.1"
+    "node": "^6.11.1"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
